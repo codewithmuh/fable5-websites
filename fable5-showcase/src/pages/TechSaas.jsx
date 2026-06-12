@@ -5,7 +5,7 @@ import { SiteTemplate } from '../components/Shared.jsx'
 import { prompts } from '../data/prompts.js'
 import { images, pin } from '../data/images.js'
 
-const A = '#3dffc4'
+const A = '#5b5bff'
 
 function NeuralSphere() {
   const group = useRef()
@@ -51,20 +51,24 @@ function NeuralSphere() {
 
 const cfg = {
   accent: A,
-  bg: '#05070f',
+  theme: 'light',
+  bg: '#f3f5ff',
+  blobs: [
+    { color: '#b9c1ff', top: '4%', right: '-12%' },
+    { color: '#a9f2dd', top: '40%', left: '-14%' },
+    { color: '#ffc9ec', top: '72%', right: '-10%' },
+  ],
   brand: 'NEURACORE',
   nav: ['Platform', 'Pricing', 'Docs', 'Console'],
   tagline: 'Ship AI that actually ships.',
   prompt: prompts.tech,
   hero: {
+    ghost: 'NEURA',
+    aurora: ['#aab4ff', '#9fe8d2'],
     image: pin.tech.hero,
-    gradient: 'linear-gradient(100deg, rgba(4,6,16,.85) 0%, rgba(4,6,16,.5) 45%, rgba(4,6,16,.18) 100%)',
-    floats: [
-      { img: pin.tech.lines, tag: 'Inference' },
-      { img: pin.tech.neon, tag: 'Agents' },
-    ],
     kicker: '>_ inference at the speed of thought',
-    title: <>Ship AI that<br />actually ships.</>,
+    titleLine1: 'Ship AI that',
+    titleLine2: 'actually ships.',
     sub: 'One platform for inference, vector search and observability — from prototype to a billion requests without changing a line.',
     cta1: 'Start building free', cta2: 'Read the docs',
     btnBg: 'linear-gradient(90deg, #6c7bff, #3dffc4)', btnColor: '#0a0f20',

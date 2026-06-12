@@ -1,6 +1,6 @@
-import { StrictMode } from 'react'
+import { StrictMode, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
-import { HashRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom'
 import './index.css'
 import Hub from './pages/Hub.jsx'
 import Airline from './pages/Airline.jsx'
@@ -13,10 +13,18 @@ import Fitness from './pages/Fitness.jsx'
 import TechSaas from './pages/TechSaas.jsx'
 import Music from './pages/Music.jsx'
 import Jewelry from './pages/Jewelry.jsx'
+import SolarSystem from './pages/SolarSystem.jsx'
+
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  return null
+}
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <HashRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Hub />} />
         <Route path="/airline" element={<Airline />} />
@@ -29,6 +37,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/tech" element={<TechSaas />} />
         <Route path="/music" element={<Music />} />
         <Route path="/jewelry" element={<Jewelry />} />
+        <Route path="/solar" element={<SolarSystem />} />
       </Routes>
     </HashRouter>
   </StrictMode>,

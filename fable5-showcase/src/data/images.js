@@ -38,8 +38,9 @@ export const pin = {
     steak: p('db/d3/72/dbd372c07084e64e1df0ed462cba28a3'),   // steak on black plate
   },
   fitness: {
-    hero: p('71/db/70/71db70b3b8da3102b59f565a56d7f20d'),    // barbell in foggy dark gym
-    fire: p('1a/65/7a/1a657a1d0a4e3352f3528907a4d9b8ce'),    // dumbbell with sparks
+    // hero swapped to sharp 2000px landscape (Pinterest original was 887px portrait)
+    hero: u('1517836357463-d25dfeac3438', 2000, 80),         // loading the bar, dark + chalk dust
+    fire: p('1a/65/7a/1a657a1d0a4e3352f3528907a4d9b8ce'),    // dumbbell with sparks (cards only)
     mono: p('70/29/57/702957a55699cc1b763d07a26fd1c7c5'),    // b&w barbell
   },
   tech: {
@@ -48,8 +49,9 @@ export const pin = {
     neon: p('61/0a/6c/610a6c41a83696d5ab6e635d9f4c3ec1'),    // purple neon pipes
   },
   music: {
-    hero: p('f6/63/a4/f663a4a0de0f2e0f5e680ca70b956fd8'),    // crowd, orange lasers
-    artist: p('9d/f7/f9/9df7f9d7465f6905a38941b8ab352cef'),  // artist above crowd
+    // hero must be ≥2000px landscape — Pinterest originals were 736px portrait (pixelated full-screen)
+    hero: u('1470229722913-7c0e2dbbafd3', 2000, 80),         // concert crowd, warm stage light (sharp)
+    artist: p('9d/f7/f9/9df7f9d7465f6905a38941b8ab352cef'),  // artist above crowd (cards only)
     neon: p('0e/35/e4/0e35e49ace2218b31f909f9cfd32110d'),    // neon tubes in clouds
   },
   jewelry: {
@@ -154,5 +156,14 @@ export const images = {
     bracelet: u('1611591437281-460bfbe1220a'),             // gold bracelet
     diamonds: u('1573408301185-9146fe634ad0'),             // diamond bracelet
     rings: u('1617038260897-41a1f14a8ca0'),                // gold rings
+  },
+  solar: {
+    hero: u('1502134249126-9f3755a50d78', 2000),           // glowing galaxy core
+    moon: u('1532693322450-2cb5c511067d'),                 // blue full moon
+    moonBw: u('1522030299830-16b8d3d049fe'),               // grey full moon
+    earth: u('1446776811953-b23d57bd21aa'),                // earth from the ISS
+    nebula: u('1462331940025-496dfbfc7564'),               // bubble nebula
+    astronaut: u('1454789548928-9efd52dc4031'),            // astronaut over earth
+    stars: u('1435224668334-0f82ec57b605'),                // night-sky starfield
   },
 }

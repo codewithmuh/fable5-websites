@@ -39,20 +39,19 @@ function Energy() {
 
 const cfg = {
   accent: A,
+  theme: 'dark',
   bg: '#07080a',
   brand: 'FORGE',
   nav: ['Clubs', 'Programs', 'Coaches', 'Join'],
   tagline: 'Earn your strong.',
   prompt: prompts.fitness,
   hero: {
+    ghost: 'FORGE',
+    aurora: ['#3d4d0e', '#5e2a0a'],
     image: pin.fitness.hero,
-    gradient: 'linear-gradient(100deg, rgba(5,7,4,.82) 0%, rgba(5,7,4,.45) 45%, rgba(5,7,4,.12) 100%)',
-    floats: [
-      { img: pin.fitness.fire, tag: 'Strength lab' },
-      { img: images.fitness.deadlift, tag: 'HIIT arena' },
-    ],
     kicker: 'No Shortcuts. Just Reps.',
-    title: <span style={{ textTransform: 'uppercase', letterSpacing: '-1px' }}>Earn your<br />strong.</span>,
+    titleLine1: 'EARN YOUR',
+    titleLine2: 'STRONG.',
     sub: '24/7 strength labs, HIIT arenas and recovery spas — with coaches who count your last rep louder than your first.',
     cta1: 'Start free week', cta2: 'Find a club',
     btnColor: '#15200a',
@@ -63,7 +62,7 @@ const cfg = {
     title: 'Train smarter',
     lead: 'Three zones. One obsession: your next personal best.',
     items: [
-      { image: images.fitness.deadlift, tag: 'Strength', title: 'Strength labs', text: 'Competition platforms, calibrated plates and velocity tracking on every bar.' },
+      { image: images.fitness.curl, tag: 'Strength', title: 'Strength labs', text: 'Competition platforms, calibrated plates and velocity tracking on every bar.' },
       { image: images.fitness.situps, tag: 'Conditioning', title: 'HIIT arenas', text: 'Heart-rate-zoned circuits on LED floors that adapt to your output in real time.' },
       { image: images.fitness.studio, tag: 'Recovery', title: 'Recovery spa', text: 'Cold plunge, sauna, compression and sleep pods. The gains happen here.' },
     ],

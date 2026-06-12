@@ -36,20 +36,19 @@ function SpeedLines() {
 
 const cfg = {
   accent: A,
+  theme: 'dark',
   bg: '#04070a',
   brand: 'VEKTOR',
   nav: ['Models', 'Performance', 'Charging', 'Order'],
   tagline: 'Zero to legend.',
   prompt: prompts.automobile,
   hero: {
+    ghost: 'VEKTOR',
+    aurora: ['#0a4d5e', '#5e0a1c'],
     image: pin.automobile.hero,
-    gradient: 'linear-gradient(100deg, rgba(2,8,12,.82) 0%, rgba(2,8,12,.45) 45%, rgba(2,8,12,.1) 100%)',
-    floats: [
-      { img: pin.automobile.porsche, tag: 'RS-7 · Night spec' },
-      { img: pin.automobile.city, tag: 'GT-X in Tokyo' },
-    ],
     kicker: 'Performance Redefined',
-    title: <>Zero to legend<br />in 2.1 seconds.</>,
+    titleLine1: 'Zero to legend',
+    titleLine2: 'in 2.1 seconds.',
     sub: 'The Vektor GT-X: 900 km of range, 1,400 horsepower, and a silhouette sculpted by the wind tunnel itself.',
     cta1: 'Configure yours', cta2: 'Watch the run',
     btnColor: '#04161c',

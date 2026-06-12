@@ -48,20 +48,24 @@ function GlowOrbs() {
 
 const cfg = {
   accent: A,
-  bg: '#12041f',
+  theme: 'dark',
+  bg: '#160427',
+  blobs: [
+    { color: '#6a0dad', top: '4%', left: '-12%' },
+    { color: '#b3128f', top: '38%', right: '-14%' },
+    { color: '#1b3fae', top: '72%', left: '-10%' },
+  ],
   brand: 'PULSE FESTIVAL',
   nav: ['Lineup', 'Stages', 'Tickets', 'Info'],
   tagline: 'Four nights. One heartbeat.',
   prompt: prompts.music,
   hero: {
+    ghost: 'PULSE',
+    aurora: ['#7a0dad', '#1b3fae'],
     image: pin.music.hero,
-    gradient: 'linear-gradient(100deg, rgba(14,3,24,.82) 0%, rgba(14,3,24,.45) 45%, rgba(14,3,24,.1) 100%)',
-    floats: [
-      { img: pin.music.artist, tag: 'Night 2 · Koda' },
-      { img: pin.music.neon, tag: 'Neon arena' },
-    ],
     kicker: 'July 24–27 · Neon Bay',
-    title: <>Four nights.<br />One heartbeat.</>,
+    titleLine1: 'Four nights.',
+    titleLine2: 'One heartbeat.',
     sub: "120 artists across five stages on the waterfront — sunrise sets, laser canyons and bass you'll feel in your ribs for a week.",
     cta1: 'Get tickets', cta2: 'See lineup',
     btnBg: 'linear-gradient(90deg, #ff3df0, #3d8bff)', btnColor: '#fff',
@@ -72,7 +76,7 @@ const cfg = {
     title: 'The stages',
     lead: 'Five worlds, one wristband.',
     items: [
-      { image: images.music.stage, tag: 'Main', title: 'Main stage', text: 'Headliners under a 60-meter LED halo with the bay behind them and 80,000 voices in front.' },
+      { image: images.music.hands, tag: 'Main', title: 'Main stage', text: 'Headliners under a 60-meter LED halo with the bay behind them and 80,000 voices in front.' },
       { image: pin.music.neon, tag: 'Indoor', title: 'Neon arena', text: 'An indoor cathedral of lasers and subsonics. Techno until the sun gives up.' },
       { image: images.music.purple, tag: 'Sunset', title: 'Sunset deck', text: 'Golden-hour house and disco on the pier, toes in the sand, drink in hand.' },
     ],
@@ -129,7 +133,7 @@ const cfg = {
     { num: '96', lbl: 'Hours of music' },
   ],
   cta: {
-    image: pin.music.hero,
+    image: images.music.colors,
     kicker: 'Tier 2 closing soon',
     title: 'Be there when the first beat drops.',
     button: 'Get your wristband',

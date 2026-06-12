@@ -90,15 +90,32 @@ export const prompts = {
   ),
 };
 
+// Premium animation layer added to all sites
+const animNote = `
+
+ANIMATION LAYER (apply throughout): kinetic word-by-word headline reveal on load (each word rises from an overflow-hidden span with a slight rotation, staggered ~90ms); magnetic buttons that lean toward the cursor and have a diagonal shine sweep on hover; animated count-up stat numbers when scrolled into view (ease-out quart, preserves $/%/commas); a thin scroll-progress bar fixed at the top in the accent color; nav links with animated underline on hover; a subtle film-grain SVG noise overlay (5% opacity, fixed) over the whole page; section reveals with perspective rotateX rise; drifting blurred gradient blobs behind content on colored themes.
+
+THEME: pick one per site — pure dark, editorial light (off-white background, near-black text), or colored (vivid gradient blobs on a tinted background). Adjust all text/border/card colors via CSS variables so sections adapt to the theme; hero text stays white over imagery.`;
+
 // Spotlight-hero variants (airline, fashion, jewelry): cursor-following reveal
 const spotlightNote = `
 
 HERO VARIANT — CURSOR SPOTLIGHT REVEAL (use this instead of the floating-cards hero): the hero is a single full-screen cinematic image shown DARKENED (CSS filter brightness ~0.3, desaturated). On top, the same image is rendered full-color but masked by a soft radial-gradient circle (~260px radius, feathered edges from 40% to 100% transparency) that follows the cursor with lerp smoothing (smooth.x += (mouse.x - smooth.x) * 0.1 in a requestAnimationFrame loop). A faint accent-colored ring outlines the spotlight. Centered heading at top: line 1 in Playfair Display italic, line 2 in the sans font, both with a staggered blur-rise entrance (translateY + blur(12px) → 0). Small paragraph bottom-left, paragraph + pill CTA bottom-right. Hide the native cursor over the hero.`;
 
+Object.keys(prompts).forEach((k) => { prompts[k] += animNote });
 prompts.airline += spotlightNote;
 prompts.fashion += spotlightNote;
 prompts.jewelry += spotlightNote;
 
-export const hubPrompt = `Create a dark, premium "showcase hub" landing page in React + react-three-fiber that lists 10 photo-real 3D industry website templates (airline, fashion, automobile, tourism, real estate, restaurant, fitness, tech, music, jewelry).
+// Site 11 is a feature demo, not an industry template — its own prompt.
+prompts.solar = `Create a stunning dark single-page site in React + Vite + react-three-fiber where Claude simulates the solar system and predicts the next solar eclipse.
 
-Background: a full-screen animated 3D starfield with slowly drifting glowing gradient orbs. Foreground: a giant gradient headline and a responsive grid of 10 cards — each card is a real Unsplash photo of that industry (boutique interior, airplane wing at sunset, supercar, beach, villa, restaurant, gym, earth from space, concert crowd, diamond ring) with a dark gradient fade, industry name, one-line description and an "Open site →" link routing to that template. Cards zoom their photo and lift on hover. Use react-router (HashRouter) for navigation.`;
+HERO — LIVE 3D ORRERY: a full-screen Three.js scene with a glowing Sun (emissive sphere + additive sprite glow + point light), all 8 planets on faint circular orbit rings (Saturn gets a ring mesh), Earth with an orbiting Moon, a 5,000-star background, and drag-to-orbit camera. Make the motion REAL: drive every body from its true J2000 mean longitude and mean motion in degrees/day (Sun 280.460 + 0.9856474t, Moon 218.316 + 13.176396t, ascending node 125.045 − 0.0529538t, planets from their J2000 elements), with the Moon's 5.14° orbital tilt applied as ecliptic latitude. Overlay UI: the simulated calendar date, time-speed pills (pause / 1 day / 1 week / 1 month / 6 months per second), and a "Predict next solar eclipse" button.
+
+ECLIPSE PREDICTION (the wow moment): on click, Newton-iterate to each upcoming new moon (elongation Moon−Sun = 0), and report an eclipse when the Moon is within 15.5° of a node (within 10.5° = central — total near perigee via the Moon's mean anomaly, annular near apogee; otherwise partial). Fast-forward the orrery to that date with eased time acceleration, then pause and show a result card with the date, eclipse type, node distance, and a CSS animation of a dark moon disc crossing a glowing sun disc with a corona. This simple model lands within ±1 day of the real NASA eclipse catalog — e.g. it finds 12 Aug 2026 (total) and 2 Aug 2027 (total).
+
+BELOW THE FOLD: marquee strip of model facts; a 3-card tilt grid (Moon / Earth / starfield photos from Unsplash) explaining the model; a split section on the eclipse math with bullets; a live-computed list of the NEXT SIX solar eclipses (date, type badge, node distance — computed in the browser, not hard-coded); a reversed split section on the implementation; a testimonial quote; a stats row (8 planets, 29.53-day month, 5.14° tilt, ±1 day accuracy); a CTA photo banner; minimal footer. Every section reveals with a 3D scroll animation. Style: near-black space background, amber accent (#ffb938), huge Sora/Space Grotesk typography, film-grain overlay.`;
+
+export const hubPrompt = `Create a dark, premium "showcase hub" landing page in React + react-three-fiber that lists 11 photo-real 3D website templates — 10 industries (airline, fashion, automobile, tourism, real estate, restaurant, fitness, tech, music, jewelry) plus an interactive solar-system simulator that predicts real eclipses.
+
+Background: a full-screen animated 3D starfield with slowly drifting glowing gradient orbs. Foreground: a giant gradient headline and a responsive grid of 11 cards — each card is a real Unsplash photo of that site (boutique interior, airplane wing at sunset, supercar, beach, villa, restaurant, gym, earth from space, concert crowd, diamond ring, galaxy core) with a dark gradient fade, site name, one-line description and an "Open site →" link routing to that template. Cards zoom their photo and lift on hover. Use react-router (HashRouter) for navigation.`;

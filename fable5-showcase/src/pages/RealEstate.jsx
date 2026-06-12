@@ -4,24 +4,23 @@ import { SiteTemplate } from '../components/Shared.jsx'
 import { prompts } from '../data/prompts.js'
 import { images, pin } from '../data/images.js'
 
-const A = '#e8c47a'
+const A = '#a8842c'
 
 const cfg = {
   accent: A,
-  bg: '#0d1330',
+  theme: 'light',
+  bg: '#f8f5ee',
   brand: 'HALO ESTATES',
   nav: ['Properties', 'Neighborhoods', 'Invest', 'Contact'],
   tagline: 'Live above the ordinary.',
   prompt: prompts.realestate,
   hero: {
+    ghost: 'HALO',
+    aurora: ['#e2cf9b', '#d8c4e8'],
     image: pin.realestate.hero,
-    gradient: 'linear-gradient(100deg, rgba(8,10,28,.85) 0%, rgba(8,10,28,.5) 45%, rgba(8,10,28,.12) 100%)',
-    floats: [
-      { img: pin.realestate.dusk, tag: '$12.4M · Cove House' },
-      { img: pin.realestate.glass, tag: '$6.2M · Palma' },
-    ],
     kicker: 'Addresses of Distinction',
-    title: <>Live above<br />the ordinary.</>,
+    titleLine1: 'Live above',
+    titleLine2: 'the ordinary.',
     sub: 'Penthouse residences, waterfront villas and architectural icons — curated for those who collect addresses, not just homes.',
     cta1: 'View properties', cta2: 'Book a viewing',
     btnColor: '#2a2010',

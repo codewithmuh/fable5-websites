@@ -4,7 +4,7 @@ import { SiteTemplate } from '../components/Shared.jsx'
 import { prompts } from '../data/prompts.js'
 import { images, pin } from '../data/images.js'
 
-const A = '#00d4b0'
+const A = '#0a9e86'
 
 function FloatingOrbs() {
   const orbs = [
@@ -24,20 +24,24 @@ function FloatingOrbs() {
 
 const cfg = {
   accent: A,
-  bg: '#06192b',
+  theme: 'light',
+  bg: '#f4faf9',
+  blobs: [
+    { color: '#9be8dc', top: '8%', left: '-12%' },
+    { color: '#ffd3c0', top: '42%', right: '-14%' },
+    { color: '#bfe3ff', top: '74%', left: '-8%' },
+  ],
   brand: 'WANDEROR',
   nav: ['Destinations', 'Experiences', 'Stories', 'Plan'],
   tagline: 'The world is closer than you think.',
   prompt: prompts.tourism,
   hero: {
+    ghost: 'WANDER',
+    aurora: ['#8fe5d5', '#ffd0b8'],
     image: pin.tourism.hero,
-    gradient: 'linear-gradient(100deg, rgba(4,16,26,.85) 0%, rgba(4,16,26,.5) 45%, rgba(4,16,26,.12) 100%)',
-    floats: [
-      { img: pin.tourism.isle1, cutout: true },
-      { img: pin.tourism.isle2, cutout: true },
-    ],
     kicker: '120 Countries, One Backpack',
-    title: <>The world is<br />closer than you think.</>,
+    titleLine1: 'The world is',
+    titleLine2: 'closer than you think.',
     sub: "Hand-crafted journeys to the planet's wildest corners — guided by locals, powered by wanderlust, remembered forever.",
     cta1: 'Plan my trip', cta2: 'Browse destinations',
     btnColor: '#06291f',

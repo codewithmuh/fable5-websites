@@ -4,26 +4,29 @@ import { SiteTemplate } from '../components/Shared.jsx'
 import { prompts } from '../data/prompts.js'
 import { images, pin } from '../data/images.js'
 
-const A = '#ffb6c8'
+const A = '#b4456a'
 
 const cfg = {
   accent: A,
-  bg: '#0a0508',
+  theme: 'light',
+  bg: '#faf7f2',
   brand: 'MAISON LUMIÈRE',
   nav: ['Collections', 'Runway', 'Ateliers', 'Journal'],
   tagline: 'Worn by light, cut from silk.',
   prompt: prompts.fashion,
   hero: {
-    spotlight: {
-      base: pin.fashion.hero,
-      baseFilter: 'brightness(.28) saturate(.2)',
-    },
-    line1: 'Worn by light,',
-    line2: 'cut from silk',
-    leftText: 'Couture that moves like water. Each piece hand-finished in our Paris atelier, each silhouette a sentence written in light.',
-    sub: 'Bring your cursor close — the light finds her the way it will find you. Autumn/Winter ’26, unveiled October 1.',
-    cta1: 'View collection',
-    btnColor: '#2a0f22',
+    ghost: 'LUMIÈRE',
+    aurora: ['#f0bccb', '#e7d3b8'],
+    image: pin.fashion.hero,
+    spotlightPanel: true,
+    baseFilter: 'brightness(.45) saturate(.25)',
+    serif: true,
+    kicker: 'Paris · Milan · Tokyo',
+    titleLine1: 'Worn by light,',
+    titleLine2: 'cut from silk.',
+    sub: 'Couture that moves like water — each piece hand-finished in our Paris atelier. Bring your cursor close: the light finds her the way it will find you.',
+    cta1: 'View collection', cta2: 'Runway film',
+    btnColor: '#fff',
   },
   marquee: ['Couture', 'Ready-to-wear', 'Accessories', 'Bridal', 'Archive', 'Bespoke'],
   features: {

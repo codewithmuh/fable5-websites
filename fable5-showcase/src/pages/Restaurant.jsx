@@ -41,20 +41,24 @@ function Embers() {
 
 const cfg = {
   accent: A,
-  bg: '#0c0805',
+  theme: 'dark',
+  bg: '#1d090d',
+  blobs: [
+    { color: '#5e1a22', top: '6%', right: '-14%' },
+    { color: '#4a2a08', top: '46%', left: '-14%' },
+    { color: '#3d0f1d', top: '78%', right: '-10%' },
+  ],
   brand: 'EMBER & OAK',
   nav: ['Menu', 'Chef', 'Cellar', 'Reserve'],
   tagline: 'Dinner as theatre.',
   prompt: prompts.restaurant,
   hero: {
+    ghost: 'EMBER',
+    aurora: ['#7a2e1c', '#52380e'],
     image: pin.restaurant.hero,
-    gradient: 'linear-gradient(100deg, rgba(14,8,3,.85) 0%, rgba(14,8,3,.5) 45%, rgba(14,8,3,.15) 100%)',
-    floats: [
-      { img: pin.restaurant.steak, tag: 'Course VI' },
-      { img: images.restaurant.salmon, tag: 'From the hearth' },
-    ],
     kicker: 'Two Stars · One Table',
-    title: <>Dinner as<br />theatre.</>,
+    titleLine1: 'Dinner as',
+    titleLine2: 'theatre.',
     sub: 'Fourteen courses of fire, smoke and season — served at the pass, plated in front of you, gone too soon.',
     cta1: 'Reserve a table', cta2: 'View tasting menu',
     btnColor: '#2a1505',
